@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ki-oferta</string>
+    <string name="title_activity_main">ki-oferta</string>
+    <string name="package_name">com.fatec.kioferta</string>
+    <string name="custom_url_scheme">com.fatec.kioferta</string>
+</resources>

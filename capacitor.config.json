@@ -1,0 +1,10 @@
+{
+  "appId": "com.fatec.kioferta",
+  "appName": "ki-oferta",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}
