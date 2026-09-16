@@ -1,0 +1,38 @@
+﻿:root {
+  /* Paleta do Estudo de Caso (Slide 6 e 7) */
+  --cor-primaria: #1e5aa8;
+  --cor-destaque: #d32f2f;
+  --tinta-1: #1f2937;
+  --tinta-2: #6b7280;
+  --tinta-3: #9ca3af;
+  --superficie-1: #ffffff;
+  --superficie-2: #f8f9fa;
+  --superficie-hover: #f1f5f9;
+  --borda: #e5e7eb;
+
+  /* Selos de estado */
+  --selo-votacao-bg: #fef3c7;
+  --selo-votacao-txt: #92400e;
+  --selo-aprovada-bg: #dcfce7;
+  --selo-aprovada-txt: #166534;
+
+  /* Grade de 4 pixels (Slide 8) */
+  --grade-tela: 16px;
+  --grade-card: 12px;
+  --grade-lista: 8px;
+  --grade-secao: 24px;
+
+  /* Tipografia (Slide 8) */
+  --txt-preco: 22px;
+  --txt-2xl: 24px;
+  --txt-xl: 19px;
+  --txt-lg: 16px;
+  --txt-md: 14px;
+  --txt-sm: 13px;
+  --txt-xs: 12px;
+
+  /* Fontes */
+  --fonte-app:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}

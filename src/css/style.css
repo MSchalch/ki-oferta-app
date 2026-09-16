@@ -1,5 +1,32 @@
+﻿@import "./variaveis.css";
+@import "./navbar.css";
+@import "./buscar.css";
+@import "./produtos.css";
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
+  font-family: var(--fonte-app);
+  background-color: #e5e7eb;
+  color: var(--tinta-1);
+  -webkit-font-smoothing: antialiased;
+}
+
+#app,
+#navbar {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#app {
+  min-height: 100vh;
+  background-color: var(--superficie-2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  position: relative;
 }

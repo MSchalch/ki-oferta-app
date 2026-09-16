@@ -1,22 +1,23 @@
-import {mapaderotas} from "./rotas/rotas.js"
-import {navbar} from "./navbar/navbar.js"
+﻿import { mapaderotas } from "./rotas/rotas.js";
+import { navbar } from "./navbar/navbar.js";
 
-const app = document.getElementById("app")
-
-navbar(mapaderotas)
+const app = document.getElementById("app");
 
 function renderizarPagina() {
-    const hash = window.location.hash || "#home"
-    const rota = mapaderotas.find((rota) => rota.url === hash)
-    if (rota) {
-        rota.pagina(app)
-        navbar(mapaderotas, hash)
-    } else {
-        app.innerHTML = "<h1>Página não encontrada</h1>"
-    }
+  const hash = window.location.hash || "#buscar";
+  const rota = mapaderotas.find((r) => r.url === hash);
+  if (rota) {
+    rota.pagina(app);
+    navbar(mapaderotas, hash === "#home" ? "#buscar" : hash);
+  } else {
+    app.innerHTML = "<h1>Página não encontrada</h1>";
+  }
 }
 
-window.addEventListener("hashchange",()=>{
-    renderizarPagina()
-})
-renderizarPagina()
+navbar(mapaderotas, window.location.hash || "#buscar");
+
+window.addEventListener("hashchange", () => {
+  renderizarPagina();
+});
+
+renderizarPagina();

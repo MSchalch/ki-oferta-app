@@ -1,5 +1,5 @@
 async function enviar(app) {
- app.innerHTML = `
+  app.innerHTML = `
  <header><h1>Enviar promoção</h1></header>
  <form class="form-oferta">
  <fieldset>
@@ -22,4 +22,4 @@ async function enviar(app) {
  <button type="submit">Enviar promoção</button>
  </form>`;
 }
-export default { url: '#enviar', label: 'Enviar', pagina: enviar };
+export default { url: "#enviar", label: "Enviar", pagina: enviar };

@@ -1,0 +1,171 @@
+﻿.container-buscar {
+  display: flex;
+  flex-direction: column;
+  padding: var(--grade-tela);
+  padding-bottom: 80px;
+  background-color: var(--superficie-2);
+  min-height: calc(100vh - 60px);
+}
+
+.cabecalho-buscar {
+  margin-top: 12px;
+  margin-bottom: var(--grade-secao);
+}
+
+.logo-radar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--tinta-2);
+  font-size: var(--txt-sm);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.icone-radar {
+  font-size: 16px;
+  color: var(--tinta-1);
+}
+
+.subtitulo-buscar {
+  font-size: var(--txt-2xl);
+  font-weight: 800;
+  color: var(--tinta-1);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.secao-input-busca {
+  margin-bottom: var(--grade-secao);
+}
+
+.grupo-input {
+  display: flex;
+  align-items: center;
+  background-color: var(--superficie-1);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 4px 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+#icone-busca {
+  display: inline-flex;
+  padding: 0 8px;
+  color: var(--tinta-2);
+  font-size: 16px;
+  font-style: normal;
+}
+
+#input-busca {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px 4px;
+  font-size: var(--txt-md);
+  color: var(--tinta-1);
+  font-family: inherit;
+}
+
+#input-busca::placeholder {
+  color: var(--tinta-3);
+}
+
+#btn-busca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: var(--cor-destaque);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: opacity 0.15s ease;
+}
+
+#btn-busca:hover {
+  opacity: 0.9;
+}
+
+#btn-busca i {
+  font-style: normal;
+}
+
+.busca-atencao {
+  font-size: var(--txt-sm);
+  color: var(--tinta-2);
+  line-height: 1.4;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.categorias-busca {
+  margin-bottom: var(--grade-secao);
+}
+
+.titulo-categorias {
+  font-size: var(--txt-lg);
+  font-weight: 700;
+  color: var(--tinta-1);
+  margin-top: 0;
+  margin-bottom: var(--grade-card);
+}
+
+.categoria-lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--grade-lista);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-categoria {
+  background-color: var(--superficie-1);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: var(--txt-md);
+  font-weight: 500;
+  color: var(--tinta-1);
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: all 0.15s ease;
+}
+
+.lista-categoria:hover {
+  background-color: var(--superficie-hover);
+  border-color: #d1d5db;
+}
+
+.lista-categoria:active {
+  transform: scale(0.98);
+}
+
+.rodape-aviso-login {
+  margin-top: auto;
+  padding: 14px 16px;
+  background-color: var(--superficie-1);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--txt-sm);
+  color: var(--tinta-2);
+}
+
+.link-entrar {
+  color: var(--tinta-1);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.link-entrar:hover {
+  color: var(--cor-destaque);
+}

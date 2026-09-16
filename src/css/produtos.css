@@ -1,0 +1,191 @@
+﻿.container-produtos {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--superficie-2);
+  min-height: calc(100vh - 60px);
+  padding-bottom: 80px;
+}
+
+.topo-busca-produtos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px var(--grade-tela);
+  background-color: var(--superficie-1);
+  border-bottom: 1px solid var(--borda);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.btn-voltar {
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--tinta-1);
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.btn-voltar:hover {
+  background-color: var(--superficie-hover);
+}
+
+.campo-busca-produtos {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: var(--superficie-1);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 6px 12px;
+  gap: 8px;
+}
+
+.icone-busca-pequeno {
+  color: var(--tinta-2);
+  font-size: 14px;
+}
+
+#input-busca-produtos {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: var(--txt-md);
+  color: var(--tinta-1);
+  background: transparent;
+  font-family: inherit;
+}
+
+.barra-filtros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px var(--grade-tela);
+}
+
+.contagem-resultados {
+  font-size: var(--txt-sm);
+  color: var(--tinta-2);
+  font-weight: 500;
+}
+
+.grupo-filtros {
+  display: flex;
+  gap: 8px;
+}
+
+.chip-filtro {
+  background-color: var(--superficie-1);
+  border: 1px solid #d1d5db;
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: var(--txt-sm);
+  font-weight: 500;
+  color: var(--tinta-2);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.chip-filtro:hover {
+  background-color: var(--superficie-hover);
+}
+
+.chip-filtro--ativo {
+  border-color: var(--cor-primaria);
+  background-color: #ebf3fc;
+  color: var(--cor-primaria);
+  font-weight: 600;
+}
+
+.lista-produtos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grade-lista);
+  padding: 0 var(--grade-tela);
+}
+
+.card-produto {
+  display: flex;
+  align-items: center;
+  gap: var(--grade-card);
+  background-color: var(--superficie-1);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: var(--grade-card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.card-produto:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.foto-produto {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.15;
+  user-select: none;
+}
+
+.info-produto {
+  flex: 1;
+  min-width: 0;
+}
+
+.nome-produto {
+  font-size: var(--txt-md);
+  font-weight: 700;
+  color: var(--tinta-1);
+  line-height: 1.25;
+  margin: 0 0 4px 0;
+}
+
+.detalhe-mercados {
+  font-size: var(--txt-xs);
+  color: var(--tinta-2);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.valores-produto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.preco-destaque {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--cor-destaque);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+
+.economia-destaque {
+  font-size: var(--txt-xs);
+  color: var(--tinta-2);
+  margin-top: 2px;
+  line-height: 1.1;
+}
