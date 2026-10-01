@@ -70,6 +70,35 @@
   padding: 14px var(--grade-tela);
 }
 
+.carrossel-categorias {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px var(--grade-tela);
+  scrollbar-width: none;
+}
+
+.carrossel-categorias::-webkit-scrollbar {
+  display: none;
+}
+
+.chip-categoria {
+  flex-shrink: 0;
+  border: 1px solid var(--borda);
+  border-radius: 9999px;
+  background-color: var(--superficie-1);
+  color: var(--tinta-2);
+  cursor: pointer;
+  padding: 6px 14px;
+  text-transform: capitalize;
+}
+
+.chip-categoria--ativo {
+  border-color: var(--cor-primaria);
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+
 .contagem-resultados {
   font-size: var(--txt-sm);
   color: var(--tinta-2);
@@ -152,6 +181,15 @@
   min-width: 0;
 }
 
+.tag-categoria {
+  display: block;
+  color: var(--tinta-2);
+  font-size: var(--txt-xs);
+  font-weight: 600;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
 .nome-produto {
   font-size: var(--txt-md);
   font-weight: 700;
@@ -188,4 +226,26 @@
   color: var(--tinta-2);
   margin-top: 2px;
   line-height: 1.1;
+}
+
+.foto-produto {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #f3f4f6;
+}
+
+.foto-produto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sem-produtos {
+  color: var(--tinta-2);
+  padding: 2rem;
+  text-align: center;
 }

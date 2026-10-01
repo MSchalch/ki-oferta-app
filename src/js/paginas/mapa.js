@@ -1,5 +1,5 @@
 async function mapa(app) {
-  app.innerHTML = /* HTML */ `
+  app.innerHTML = `
     <header>
       <h1>Mapa</h1>
     </header>

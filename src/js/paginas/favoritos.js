@@ -1,5 +1,5 @@
 async function favoritos(app) {
-  app.innerHTML = /* HTML */ `
+  app.innerHTML = `
     <header>
       <h1>Favoritos</h1>
     </header>

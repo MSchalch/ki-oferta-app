@@ -1,5 +1,5 @@
 async function conta(app) {
-  app.innerHTML = /* HTML */ `
+  app.innerHTML = `
     <header>
       <h1>Conta</h1>
     </header>
