@@ -17,7 +17,8 @@
     "@capacitor/camera": "latest",
     "@capacitor/core": "^8.5.0",
     "@capacitor/ios": "^8.5.0",
-    "@capacitor/splash-screen": "latest"
+    "@capacitor/splash-screen": "latest",
+    "lucide": "^1.48.0"
   },
   "devDependencies": {
     "@capacitor/cli": "^8.5.0",

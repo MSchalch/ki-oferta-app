@@ -5,4 +5,8 @@ async function favoritos(app) {
     </header>
   `;
 }
-export default { url: "#favoritos", label: "Favoritos", pagina: favoritos };
+export default { 
+  url: "#favoritos", 
+  label: "Favoritos", 
+  pagina: favoritos 
+};

@@ -8,17 +8,17 @@
       const ativo =
         rota.url === atual || (atual === "#produtos" && rota.url === "#buscar");
       const icones = {
-        "#buscar": "&#9906;",
-        "#mapa": "&#9901;",
-        "#enviar": "+",
-        "#favoritos": "&#9873;",
-        "#conta": "&#9881;",
+        "#buscar": "search",
+        "#mapa": "map",
+        "#enviar": "plus",
+        "#favoritos": "heart",
+        "#conta": "user",
       };
-      const icone = icones[rota.url] || "&#8226;";
+      const icone = icones[rota.url] || "circle";
       return `
         <li class="navbar__item">
           <a href="${rota.url}" class="navbar__link ${ativo ? "navbar__link--ativo" : ""}" ${ativo ? 'aria-current="page"' : ""}>
-            <span class="navbar__icone">${icone}</span>
+            <i class="navbar__icone" data-lucide="${icone}" aria-hidden="true"></i>
             <span class="navbar__texto">${rota.label}</span>
           </a>
         </li>

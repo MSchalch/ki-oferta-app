@@ -5,4 +5,8 @@ async function mapa(app) {
     </header>
   `;
 }
-export default { url: "#mapa", label: "Mapa", pagina: mapa };
+export default { 
+  url: "#mapa", 
+  label: "Mapa", 
+  pagina: mapa 
+};

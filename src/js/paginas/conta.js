@@ -5,4 +5,8 @@ async function conta(app) {
     </header>
   `;
 }
-export default { url: "#conta", label: "Conta", pagina: conta };
+export default { 
+  url: "#conta", 
+  label: "Conta", 
+  pagina: conta 
+};
