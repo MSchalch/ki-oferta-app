@@ -1,6 +1,27 @@
 ﻿import produtos from "../dadosMockados/produtos.js";
 
+// Lista com metadados das categorias (ícones e slugs compatíveis com os dados mockados)
+const categoriasDisponiveis = [
+  { id: "mercearia", nome: "Mercearia", icone: "🍚" },
+  { id: "hortifruti", nome: "Hortifrúti", icone: "🍎" },
+  { id: "bebidas", nome: "Bebidas", icone: "🥤" },
+  { id: "limpeza", nome: "Limpeza", icone: "🧼" },
+  { id: "higiene", nome: "Higiene", icone: "🪥" },
+  { id: "carnes", nome: "Carnes", icone: "🥩" },
+];
+
 function buscar(app) {
+  const cardsCategoriasHtml = categoriasDisponiveis
+    .map(
+      (cat) => `
+      <li class="lista-categoria" data-categoria="${cat.id}">
+        <span class="icone-categoria">${cat.icone}</span>
+        <span class="nome-categoria">${cat.nome}</span>
+      </li>
+    `
+    )
+    .join("");
+
   app.innerHTML = `
     <div class="container-buscar">
       <header class="cabecalho-buscar">
@@ -12,32 +33,28 @@ function buscar(app) {
       </header>
 
       <section class="secao-input-busca">
-        <form class="grupo-input" onsubmit="event.preventDefault(); document.getElementById('btn-busca').click();">
+        <form class="grupo-input" id="form-busca">
           <label for="input-busca">
-            <i data-lucide="search" id="icone-busca">&#9906;</i>
+            <span class="icone-busca">&#9906;</span>
           </label>
           <input 
             type="text" 
             id="input-busca" 
-            placeholder="Produto ou marca"
+            placeholder="Produto ou marca (ex: café, sabonete)"
             aria-label="campo busca de produto"
+            autocomplete="off"
           >
-          <button type="button" id="btn-busca" aria-label="Buscar produtos"> 
-            <i data-lucide="arrow-right">&#8594;</i>
+          <button type="submit" id="btn-busca" aria-label="Buscar produtos"> 
+            <span>&#8594;</span>
           </button>
         </form>
-        <p class="busca-atencao">Preços da semana de 10 a 16 de agosto, enviados por quem está no mercado.</p>
+        <p class="busca-atencao">Preços atualizados enviados por consumidores locais.</p>
       </section>
 
       <section class="categorias-busca">
-        <h2 class="titulo-categorias">Categorias</h2>
-        <ul class="categoria-lista">
-          <li class="lista-categoria" data-categoria="mercearia">Mercearia</li>
-          <li class="lista-categoria" data-categoria="carnes">Carnes</li>
-          <li class="lista-categoria" data-categoria="hortifruti">Hortifrúti</li>
-          <li class="lista-categoria" data-categoria="bebidas">Bebidas</li>
-          <li class="lista-categoria" data-categoria="limpeza">Limpeza</li>
-          <li class="lista-categoria" data-categoria="higiene">Higiene</li>
+        <h2 class="titulo-categorias">Categorias em destaque</h2>
+        <ul class="categoria-grid">
+          ${cardsCategoriasHtml}
         </ul>
       </section>
 
@@ -47,30 +64,35 @@ function buscar(app) {
       </footer>
     </div>
   `;
-  adicionarEvento(app);
+
+  adicionarEventos(app);
 }
 
-function adicionarEvento(app) {
-  const botaoBusca = document.getElementById("btn-busca");
+function adicionarEventos(app) {
+  const formBusca = document.getElementById("form-busca");
   const inputBusca = document.getElementById("input-busca");
-  const listaCategoria = document.querySelectorAll(".lista-categoria");
+  const itensCategoria = document.querySelectorAll(".lista-categoria");
 
-  if (botaoBusca) {
-    botaoBusca.addEventListener("click", () => {
-      const termo =
-        inputBusca && inputBusca.value.trim()
-          ? inputBusca.value.trim()
-          : "café";
-      produtos.pagina(app, termo);
+  // Busca digitada por texto
+  if (formBusca) {
+    formBusca.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const termo = inputBusca ? inputBusca.value.trim() : "";
+      
+      // Abre a listagem filtrando pelo termo digitado em todas as categorias
+      produtos.pagina(app, termo, "todas");
     });
   }
 
-  listaCategoria.forEach((item) =>
+  // Busca por clique na categoria
+  itensCategoria.forEach((item) => {
     item.addEventListener("click", () => {
-      const termo = item.textContent.trim();
-      produtos.pagina(app, termo);
-    })
-  );
+      const categoriaSelecionada = item.dataset.categoria;
+      
+      // Abre a listagem filtrando especificamente pela categoria clicada (sem restringir por texto)
+      produtos.pagina(app, "", categoriaSelecionada);
+    });
+  });
 }
 
 export default {

@@ -57,3 +57,24 @@
 .navbar__link--ativo .navbar__texto {
   font-weight: 700;
 }
+
+.carrossel-categorias {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
+}
+
+.carrossel-categorias::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Edge */
+}
+
+.chip-categoria {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
